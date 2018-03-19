@@ -1,0 +1,19 @@
+extend layout-v2
+
+block form
+    .container
+        .card.card-container
+            img(id="profile-img",class="profile-img-card",src="/pictures/avatar_2x.png")
+            p(id="profile-name",class="profile-name-card")
+            form(class='form-signin',action='/signup', method='POST')
+                if(message.length>0)
+                    .alert.alert-danger.alert-dismissible
+                        a(href="#",class="close",data-dismiss="alert",aria-label="close") &times;
+                        | #{message}          
+                span.reauth-email#reauth-email
+                input(type="user_name",id="inputUername",class="form-control",placeholder="User name",name='user_name',required)
+                input(type="email",id="inputEmail",class="form-control",placeholder="Email address",name='email',required autofocus)
+                input(type="password",id="inputPassword",class="form-control",placeholder="Password",name='password',required)
+                button(class="btn btn-lg btn-primary btn-block btn-signin",type="submit") Sign up
+
+

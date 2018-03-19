@@ -1,0 +1,43 @@
+extend layout
+
+block style
+  title #{title} - My Site
+  link(rel='stylesheet', href='/stylesheets/style.css')
+
+block content
+
+  form(class='container',action='http://localhost:1337/api/game/', method='POST')
+    p
+      | First Name: 
+      input(type='text', name='first_name')
+      br                                  
+      | Last Name: 
+      input(type='text', name='last_name')
+      br
+    input(type='submit', value='Submit') 
+
+//- block sidebar
+//-   .widget
+    //- h1 Widget
+    //- p
+    //-   | Sed auctor neque eu tellus rhoncus ut
+    //-   | eleifend nibh porttitor. Ut in nulla enim.
+    
+    //- p
+    //-   | Vivamus hendrerit arcu sed erat molestie
+    //-   | vehicula.
+
+    //- h1 Description
+    //- p
+    //-   | If you want to join the game, please submit your first name
+    //-   | and last name on the left form.
+
+//-  script.
+//-   onload(){
+//-     var url = windows.locaion.url;
+//-     var parm = url.parms['status'];
+//-     if(par=='ss'){
+//-       alert(ssss)
+//-     }
+//-   }
+

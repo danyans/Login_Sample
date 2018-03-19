@@ -1,0 +1,17 @@
+{
+    "port": 1337,
+    "mongoose": {
+        "uri": "mongodb://localhost/apiDB"
+    },
+    "transport":{
+        "host": "smtp-mail.outlook.com",
+        "port": "587",
+        "secureConnection": "false",
+        "auth": {
+            "user": "niki.sun@ehealth.com",
+            "pass":  "Ehiqwer1234"
+        }
+    },
+    "number":9,
+    "schedule_time":"0 15 * * *"
+}

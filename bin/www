@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+// var debug = require('debug')('restapi');
+
+var libs = process.cwd() + '/libs/';
+
+var config = require(libs + 'controllers/config');
+var log = require(libs + 'controllers/log')(module);
+var app = require(libs + 'app');
+var applycount = require(libs + 'applycount');
+
+app.set('port', process.env.PORT || config.get('port') || 3000);
+
+var server = app.listen(app.get('port'), function() {
+  console.log('Express server listening on port ' + app.get('port'));
+  // debug('Express server listening on port ' + app.get('port'));
+  log.info('Express server listening on port ' + app.get('port'));
+});

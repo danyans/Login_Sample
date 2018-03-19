@@ -1,0 +1,27 @@
+extend layout-v2
+
+block forget
+    //- .modal.fade#myModal
+    .modal-dialog
+        .modal-content
+            form(method='POST')
+                .modal-header
+                    //- button(type='button',class='close',data-dismiss='modal',aria-hidden='true') &times;
+                    h4.modal-title Reset Password
+                .modal-body
+                    if(error.length>0)
+                        .alert.alert-danger.alert-dismissible
+                            a(href="#",class="close",data-dismiss="alert",aria-label="close") &times;
+                            | #{error}
+                    if(info.length>0)
+                        .alert.alert-success.alert-dismissible
+                            a(href="#",class="close",data-dismiss="alert",aria-label="close") &times;
+                            | #{info}
+                    p New Password
+                    input(type='password',name='password',placeholder='New Password',autocomplete='off',class='form-control placeholder-no-fix',required autofocus)
+                    br
+                    p Confirm Password
+                    input(type='password',name='confirm',placeholder='Confirm Password',autocomplete='off',class='form-control placeholder-no-fix')
+                .modal-footer
+                    //- button(data-dismiss="modal",class="btn btn-default",type="button") Cancel
+                    button(class="btn btn-success",type="submit") Update Password

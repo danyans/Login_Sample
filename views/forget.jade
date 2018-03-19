@@ -1,0 +1,25 @@
+extend layout-v2
+
+block forget
+    //- .modal.fade#myModal
+    .modal-dialog
+        .modal-content
+            form(action='/forget',method='POST')
+                .modal-header
+                    //- button(type='button',class='close',data-dismiss='modal',aria-hidden='true') &times;
+                    h4.modal-title Forgot Password ?
+                .modal-body
+                    if(error.length>0)
+                        .alert.alert-danger.alert-dismissible
+                            a(href="#",class="close",data-dismiss="alert",aria-label="close") &times;
+                            | #{error}
+                    if(info.length>0)
+                        .alert.alert-success.alert-dismissible
+                            a(href="#",class="close",data-dismiss="alert",aria-label="close") &times;
+                            | #{info}
+                    p Enter your e-mail address below to reset your password.
+                    input(type='email',name='email',placeholder='Email',autocomplete='off',class='form-control placeholder-no-fix',required autofocus)
+                .modal-footer        
+                    button(data-dismiss="modal",class="btn btn-default",type="button") 
+                        a(href='/login') Cancel
+                    button(class="btn btn-success",type="submit") Submit

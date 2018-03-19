@@ -1,0 +1,40 @@
+doctype html
+
+html(lang='en')
+
+head
+    title My Site
+    meta(charset='utf-8')
+    meta(name='viewport',content='width=device-width, initial-scale=1')
+    link(rel='stylesheet',href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet',href='https://fonts.googleapis.com/css?family=Montserrat')
+    link(rel='stylesheet',href='/stylesheets/myStyle.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+
+body
+    nav.navbar.navbar-default
+        .container
+            .navbar-header
+                button(type='button',class='navbar-toggle',data-toggle='collapse',data-target='#myNavbar')
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                block user
+            .collapse.navbar-collapse#myNavbar
+                ul.nav.navbar-nav.navbar-right
+                    li
+                         a(href='#') WHO
+                     li
+                        a(href='#') WHAT
+                    li
+                        a(href='#') WHERE
+                    block logout
+
+   .bg-1.container-fluid.text-center
+        h3.margin Who Am I?
+        img(src='/pictures/1.png',class='img-circle',style='display:inline',alt='Bird',width='350',height='350')
+        h3 I'm an adventurer
+
+footer.bg-4.container-fluid.text-center
+    p Bootstrap Theme

@@ -1,0 +1,26 @@
+extend layout
+
+block style
+  title #{title} - My Site
+  link(rel='stylesheet', href='/stylesheets/style.css')
+  link(rel='stylesheet', href='/stylesheets/structure.css')
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+
+block content
+
+  form(action='/signup', method='POST',class='box login')
+    fieldset.boxBody
+        if(message.length>0)
+          .alert.alert-danger #{message}
+        label User Name
+        input(type='text',name='user_name',required)
+        label Email
+        input(type='text',placeholder='Enter Your Email Address',name='email',required)
+        label Password
+        input(type='password',name='password',required)
+    footer
+        input(type='button',value='Login',class='btnLogin',onClick="parent.location='/login'")
+        input(type='submit',value='SignUp',class='btnLogin')
+ 
+
+

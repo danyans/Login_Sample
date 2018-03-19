@@ -1,0 +1,27 @@
+extend layout-v2
+
+block script
+    script(src='/js/iNotify.js')
+    script(src='/js/notification.js')
+    script.
+        inotifyTest();
+
+block form
+    .container
+        .card.card-container
+            img(id="profile-img",class="profile-img-card",src="/pictures/werewolf.jpg")
+            p(id="profile-name",class="profile-name-card")
+            form(class='form-signin',action='http://localhost:1337/api/game/', method='POST')
+                if(error.length>0)
+                    .alert.alert-danger.alert-dismissible
+                        a(href="#",class="close",data-dismiss="alert",aria-label="close") &times;
+                        | #{error}
+                if(info.length>0) 
+                    .alert.alert-success.alert-dismissible
+                        a(href="#",class="close",data-dismiss="alert",aria-label="close") &times;
+                        | #{info}
+                span.reauth-email#reauth-email
+                input(type='text',id="inputEmail",class="form-control",placeholder="First Name",name='first_name',required autofocus)
+                input(type='text',id="inputPassword",class="form-control",placeholder="Last Name",name='last_name',required)
+                button(class="btn btn-lg btn-primary btn-block btn-signin",type='submit') Apply
+

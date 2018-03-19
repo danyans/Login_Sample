@@ -1,0 +1,9 @@
+extend layout-home
+
+block user
+    a(class='navbar-brand',href='#{link}') #{home}
+
+block logout
+    if(home.includes('Hi'))
+        li
+            a(href='/logout') Logout
