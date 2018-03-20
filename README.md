@@ -13,8 +13,8 @@ You need to have installed Node.js and MongoDB
 To install dependencies enter project folder and run following command:
 
 npm install
-```
-## Run server
+
+### Run server 
 
 To run server execute:
 ```
